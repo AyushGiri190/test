@@ -77,7 +77,7 @@ def upload_image_tuber():
 @app.route('./test',method=["POST","GET"])
 def testing():
     api = os.environ.get("testing")
-    return jsonify({"message":f"{api}"})
+    return jsonify({"message":f"{api}"}),200
 
 @app.route('/checkbraincancer', methods=["POST","GET"])
 def upload_image_brain():

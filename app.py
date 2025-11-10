@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from PIL import Image
-#from lungcancer import predict_image_lung
-#from tuberculosis import predict_image_tuber
+from lungcancer import predict_image_lung
+from tuberculosis import predict_image_tuber
 from braincancer import predict_image_brain
-#from Breast_cancer import predict_image_breast
+from Breast_cancer import predict_image_breast
 #from response import get_chatbot_response
 import os
 #from utils.chat_history import chat_history
@@ -29,7 +29,7 @@ def upload_image():
     return jsonify({"message": "Image received successfully"}), 200
 
 
-'''
+
 @app.route('/checklungcancer', methods=["POST","GET"])
 def upload_image_lung():
     if 'image' not in request.files:
@@ -74,7 +74,7 @@ def upload_image_tuber():
     return jsonify({"message": f"{prediction}"}), 200
 
 
-'''
+
 
 @app.route('/checkbraincancer', methods=["POST","GET"])
 def upload_image_brain():
@@ -93,7 +93,7 @@ def upload_image_brain():
     return jsonify({"message": f"{prediction}"}), 200
 
 
-'''
+
 @app.route('/checkbreastcancer', methods=["POST","GET"])
 def upload_image_breast():
     if 'image' not in request.files:
@@ -113,7 +113,7 @@ def upload_image_breast():
     # prediction="hello"
     return jsonify({"message": f"{prediction}"}), 200
 
-
+'''
 @app.route('/chatbot', methods=["POST","GET"])
 def chatbot():
     data = request.get_json()

@@ -1,3 +1,6 @@
 Flask
 gunicorn
 flask-cors
+Pillow
+tensorflow  # For tensorflow.keras.models, tensorflow.keras.preprocessing, numpy, and general TF usage
+numpy

@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-#from PIL import Image
+from PIL import Image
 #from lungcancer import predict_image_lung
 #from tuberculosis import predict_image_tuber
-#from braincancer import predict_image_brain
+from braincancer import predict_image_brain
 #from Breast_cancer import predict_image_breast
 #from response import get_chatbot_response
 import os
@@ -14,7 +14,7 @@ CORS(app)  # Allow all origins (for development)
 UPLOAD_FOLDER = "./uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-'''@app.route('/upload', methods=["POST","GET"])
+@app.route('/upload', methods=["POST","GET"])
 def upload_image():
     if 'image' not in request.files:
         return jsonify({"message": "No file part"}), 400
@@ -29,7 +29,7 @@ def upload_image():
     return jsonify({"message": "Image received successfully"}), 200
 
 
-
+'''
 @app.route('/checklungcancer', methods=["POST","GET"])
 def upload_image_lung():
     if 'image' not in request.files:
@@ -74,7 +74,7 @@ def upload_image_tuber():
     return jsonify({"message": f"{prediction}"}), 200
 
 
-
+'''
 
 @app.route('/checkbraincancer', methods=["POST","GET"])
 def upload_image_brain():
@@ -88,15 +88,12 @@ def upload_image_brain():
     image = Image.open(file.stream)  # Open image
     image = image.resize((64, 64))
     # You can save the file if needed
-    save_path = os.path.join(UPLOAD_FOLDER, file.filename)
-    image.save(save_path)
-    
     prediction = predict_image_brain(image)
     # prediction="hello"
     return jsonify({"message": f"{prediction}"}), 200
 
 
-
+'''
 @app.route('/checkbreastcancer', methods=["POST","GET"])
 def upload_image_breast():
     if 'image' not in request.files:

@@ -4,3 +4,10 @@ flask-cors
 Pillow
 tensorflow  # For tensorflow.keras.models, tensorflow.keras.preprocessing, numpy, and general TF usage
 numpy
+langchain  # Covers general langchain imports
+langchain-community  # For SentenceTransformerEmbeddings
+langchain-pinecone
+pinecone-client  # For pinecone import
+python-dotenv  # For load_dotenv
+langchain-google-genai
+sentence-transformers

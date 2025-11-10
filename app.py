@@ -53,7 +53,7 @@ def upload_image_lung():
 
 
 
-
+'''
 @app.route('/checktubercancer', methods=["POST","GET"])
 def upload_image_tuber():
     if 'image' not in request.files:
@@ -72,9 +72,12 @@ def upload_image_tuber():
     # prediction="hello"
     prediction = predict_image_tuber(image)
     return jsonify({"message": f"{prediction}"}), 200
+'''
 
-
-
+@app.route('./test',method=["POST","GET"])
+def testing():
+    api = os.environ.get("testing")
+    return jsonify({"message":f"{api}"})
 
 @app.route('/checkbraincancer', methods=["POST","GET"])
 def upload_image_brain():
